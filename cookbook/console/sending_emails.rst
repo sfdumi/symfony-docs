@@ -121,3 +121,11 @@ commands and uses a different spooling method.
     Taking care of the spooling is only needed when memory spooling is used.
     If you are using file spooling (or no spooling at all), there is no need
     to flush the queue manually within the command.
+
+.. caution::
+
+    The queue is only flushed at ``kernel.terminate`` (see ":doc:`/doc/current/reference/events`".), so be *extra careful* to catch and handle any possible Exceptions and avoid Fatal Errors at all costs when sending emails from commands, because if the command execution gets interrupted - even *after* the email send method was called, the emails will **NOT** be actually sent.
+
+.. caution::
+
+    When sending lots of emails from a command, spooling them could cause the memory consumption to become a problem. Consider implementing a batching mechanism; this could be as simple as flushing the queue at a predefined number of emails added to the queue.
