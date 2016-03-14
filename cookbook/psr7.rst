@@ -30,9 +30,9 @@ Converting from HttpFoundation Objects to PSR-7
 The bridge provides an interface of a factory called
 :class:`Symfony\\Bridge\\PsrHttpMessage\\HttpMessageFactoryInterface`
 that builds objects implementing PSR-7 interfaces from HttpFoundation objects.
-It also provide a default implementation using Zend Diactoros internally.
+It also provides a default implementation using Zend Diactoros internally.
 
-The following code snippet explain how to convert a :class:`Symfony\\Component\\HttpFoundation\\Request`
+The following code snippet explains how to convert a :class:`Symfony\\Component\\HttpFoundation\\Request`
 to a Zend Diactoros :class:`Zend\\Diactoros\\ServerRequest` implementing the
 :class:`Psr\\Http\\Message\\ServerRequestInterface` interface::
 
@@ -60,11 +60,11 @@ interface::
 Converting Objects implementing PSR-7 Interfaces to HttpFoundation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-On the other hand, the bridge provide a factory interface called
+On the other hand, the bridge provides a factory interface called
 :class:`Symfony\\Bridge\\PsrHttpMessage\\HttpFoundationFactoryInterface`
 that builds HttpFoundation objects from objects implementing PSR-7 interfaces.
 
-The next snippet explain how to convert an object implementing the :class:`Psr\\Http\\Message\\ServerRequestInterface`
+The next snippet explains how to convert an object implementing the :class:`Psr\\Http\\Message\\ServerRequestInterface`
 interface to a :class:`Symfony\\Component\\HttpFoundation\\Request` instance::
 
     use Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory;
